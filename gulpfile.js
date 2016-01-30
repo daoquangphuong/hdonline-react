@@ -99,9 +99,7 @@ gulp.task(_STEP_3, [], function () {
     var now = new Date();
     gulp.src(
         [
-            SOURCE_PATH + '/css' + '/first.css',
-            SOURCE_PATH + '/css' + '/**/*.css',
-            SOURCE_PATH + '/css' + '/last.css'
+            SOURCE_PATH + '/css' + '/style.css'
         ])
         .pipe(concat('style.css'))
         .pipe(gulpif(!_IS_DEV, uglifycss()))
