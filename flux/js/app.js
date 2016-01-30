@@ -1,30 +1,31 @@
 "use strict";
 
-
 (function () {
     try {
-        var reactHook = require('./core/react_hook');
-        reactHook();
+        require('./core/react_hook')();
+        require('./core/jquery_hook')();
         var React = require('react');
         var ReactDOM = require('react-dom');
         var reactRouter = require('react-router');
 
         //component
 
-        var Layout = require('./module/layout/com/layout');
+        var App = require('./module/app/com/app');
         var HelloWorld = require('./module/hello_world/com/hello_world');
+        var Router = reactRouter.Router;
         var Route = reactRouter.Route;
+        var browserHistory = reactRouter.browserHistory;
 
         var routeSetup = (
-            <Route handler={Layout}>
-                <Route path="hello_world" handler={HelloWorld}/>
-                <Route path="*" handler={HelloWorld}/>
-            </Route>
+            <Router history={browserHistory}>
+                <Route component={App}>
+                    <Route path="hello_world" component={HelloWorld}/>
+                    <Route path="*" component={HelloWorld}/>
+                </Route>
+            </Router>
         );
 
-        reactRouter.run(routeSetup, reactRouter.HistoryLocation, function (Root) {
-            ReactDOM.render(<Root/>, document.getElementById('app'));
-        });
+        ReactDOM.render(routeSetup, document.getElementById('app'));
     }
     catch (err) {
         console.error(err);

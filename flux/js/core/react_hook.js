@@ -20,7 +20,7 @@ module.exports = function () {
                     try {
                         return oldFunc.apply(this, arguments);
                     } catch (e) {
-                        console.log('React Hook Detect Error: ');
+                        console.log('React Hook Detect Error On Component ' + spec.displayName);
                         console.error(e);
                     }
                 };

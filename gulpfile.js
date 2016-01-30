@@ -41,9 +41,8 @@ var bundler = watchify(
         .transform("babelify", {presets: ["es2015", "react"], ignore: /\/node_modules\//})
     , {deley: 1, poll: 250, ignoreWatch: true});
 gulp.task(_STEP_1, [], function () {
-    var now = new Date();
-
     function rebundle() {
+        var now = new Date();
         if (domain[_STEP_1]) {
             domain[_STEP_1].dispose();
         }

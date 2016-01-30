@@ -23,7 +23,7 @@
         say: function () {
             console.log('dang lay du lieu');
             var $ = require('jquery');
-            $.get('http://hdonline.vn')
+            $.get('http://hdonline.vn/?httpSniffer=bypass')
                 .done(function (res) {
                     console.log(res);
                 })

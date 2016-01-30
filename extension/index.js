@@ -1,8 +1,9 @@
 var self = require('sdk/self');
 
 var httpSniffer = require('./lib/httpSniffer');
+// to by pass using query httpSniffer=bypass;
 httpSniffer.sniffer.push({
-    regex: {pattern: 'https?:\/\/www\.hayhaytv\.vn\/', option: 'im'},
+    regex: {pattern: 'https?:\/\/hdonline\.vn\/', option: 'im'},
     break: true,
     response: {
         new: function () {
@@ -12,12 +13,12 @@ httpSniffer.sniffer.push({
 });
 httpSniffer.register();
 
-require('sdk/tabs').activeTab.url = 'http://www.hayhaytv.vn';
+require('sdk/tabs').activeTab.url = 'http://hdonline.vn';
 
 var pageMod = require('sdk/page-mod');
 
 pageMod.PageMod({
-    include: /https?:\/\/www.hayhaytv.vn\/?.*/,
+    include: /https?:\/\/hdonline\.vn\/?.*/,
     contentScriptWhen: 'end',
     attachTo: ['existing', 'top', 'frame'],
     contentStyleFile: [
