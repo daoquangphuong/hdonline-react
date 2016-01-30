@@ -1,0 +1,20 @@
+{
+  "title": "hdonline-react-js",
+  "name": "hdonline-react-js",
+  "version": "0.0.1",
+  "description": "hdonline by reactjs",
+  "main": "index.js",
+  "author": "Dao Quang Phuong",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ],
+  "permissions": {
+    "cross-domain-content": [
+      "http://hdonline.vn/"
+    ]
+  }
+}
