@@ -32,6 +32,7 @@ store.on('reset', function () {
 });
 
 store.on('beforeAll', function () {
+    getLoading();
     console.log(arguments);
 });
 

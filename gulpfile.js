@@ -100,8 +100,6 @@ gulp.task(_STEP_3, [], function () {
     gulp.src(
         [
             SOURCE_PATH + '/css' + '/first.css',
-            SOURCE_PATH + '/css' + '/bootstrap.css',
-            SOURCE_PATH + '/css' + '/theme.css',
             SOURCE_PATH + '/css' + '/**/*.css',
             SOURCE_PATH + '/css' + '/last.css'
         ])
