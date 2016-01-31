@@ -13,7 +13,7 @@ httpSniffer.sniffer.push({
 });
 httpSniffer.register();
 
-require('sdk/tabs').activeTab.url = 'http://hdonline.vn';
+//require('sdk/tabs').activeTab.url = 'http://hdonline.vn';
 
 var pageMod = require('sdk/page-mod');
 

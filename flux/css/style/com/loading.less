@@ -1,25 +1,14 @@
-//.keyframes(@name; @arguments) {
-//    @-moz-keyframes @name { @arguments();
-//    }
-//    @-webkit-keyframes @name { @arguments();
-//    }
-//    @keyframes @name { @arguments();
-//    }
-//}
-//
-//.animation(@arguments) {
-//    -webkit-animation: @arguments;
-//    -moz-animation: @arguments;
-//    animation: @arguments;
-//}
-
 #loading {
-    //.un-full;
+    .un-full;
     .loading-screen {
+        .user-select(none);
         position: fixed;
         z-index: 9999;
-        .full;
-        .wrapper-blur{
+        overflow: hidden;
+        .hide-after(1s);
+        .wrapper-blur {
+            .animated(1s);
+            .fadeOut;
         }
         .icon {
             position: fixed;
@@ -28,6 +17,12 @@
             .translate(-50%, -50%);
             i.fa {
                 color: #fff;
+            }
+        }
+        //active
+        &.active{
+            .wrapper-blur{
+                .fadeIn;
             }
         }
     }

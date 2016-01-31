@@ -38,7 +38,7 @@ store.on('beforeAll', function () {
 });
 
 store.on('afterAll', function () {
-    console.log(arguments);
+    //console.log(arguments);
 });
 
 module.exports = store;
