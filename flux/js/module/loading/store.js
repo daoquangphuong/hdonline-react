@@ -14,6 +14,7 @@ var getLoading = function () {
     if (!$('body > #loading').exists()) {
         $('body').prepend('<div id="loading"></div>');
     }
+    var React = require('react');
     var ReactDom = require('react-dom');
     var Loading = require('./com/loading');
     return loading = ReactDom.render(<Loading/>, document.getElementById('loading'));

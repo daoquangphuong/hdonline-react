@@ -1,8 +1,8 @@
 {
-  "title": "hdonline-react-js",
-  "name": "hdonline-react-js",
+  "title": "hdonline-react",
+  "name": "hdonline-react",
   "version": "0.0.1",
-  "description": "hdonline by reactjs",
+  "description": "hdonline by react",
   "main": "index.js",
   "author": "Dao Quang Phuong",
   "engines": {

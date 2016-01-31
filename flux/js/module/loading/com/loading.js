@@ -16,13 +16,16 @@ var Loading = React.createClass({
     render(){
         var state = store.get();
         var loadingClass = classNames({
-            'loading-screen': true,
-            'active': state.stack.length > 0
+            'loading-screen': true
         });
         return (
             <div className={loadingClass}>
-                <div className="blur"></div>
-                <i className="fa fa-4x fa-spin fa-spinner"/>
+                <div className="wrapper-blur animated bounceIn">
+                    <div className="blur"></div>
+                </div>
+                <div className="icon">
+                    <i className="fa fa-5x fa-spin fa-spinner"/>
+                </div>
             </div>
         )
     }

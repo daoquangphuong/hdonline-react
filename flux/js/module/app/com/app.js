@@ -1,13 +1,14 @@
 "use strict";
 
 var React = require('react');
-var Loading = require('../../loading/com/loading');
+// store
+var loadingStore = require('../../loading/store');
+loadingStore.trigger('show');
 var App = React.createClass({
     render(){
         return (
             <div className="wrapper">
                 <div id="container" className="container">
-                    <Loading/>
                     {this.props.children}
                 </div>
             </div>
