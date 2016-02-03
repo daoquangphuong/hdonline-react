@@ -21,7 +21,7 @@ var Loading = React.createClass({
         store.off('update', this.onUpdate);
     },
     render(){
-        var iconList = ['fa-spin', 'fa-circle-o-notch', 'fa-cog', 'fa-refresh'];
+        var iconList = ['fa-spinner', 'fa-circle-o-notch', 'fa-cog', 'fa-refresh'];
         var icon = iconList[_.random(0, iconList.length - 1)];
         var state = store.get();
         var loadingClass = classNames({
