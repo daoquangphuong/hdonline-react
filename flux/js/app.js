@@ -2,6 +2,13 @@
 
 (function () {
     try {
+        if (typeof unsafeWindow !== 'undefined') {
+            if (unsafeWindow.needReload) {
+                return window.location.reload();
+            }
+            unsafeWindow.needReload = true;
+        }
+        require('./core/q_hook');
         require('./core/react_hook')();
         require('./core/jquery_hook')();
         var React = require('react');
@@ -18,9 +25,7 @@
 
         var routeSetup = (
             <Router history={browserHistory}>
-                <Route component={App}>
-                    <Route path="hello_world" component={HelloWorld}/>
-                    <Route path="*" component={HelloWorld}/>
+                <Route path="/*" component={App}>
                 </Route>
             </Router>
         );

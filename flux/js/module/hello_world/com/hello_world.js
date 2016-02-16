@@ -39,7 +39,7 @@
             var self = this;
             var state = store.get();
             return (
-                <div>
+                <div className="well">
                     <h1 className="text-primary">This Is Example</h1>
                     <button className="btn btn-info" onClick={self.say}>{'CLICK'}</button>
                     <MessageBox message={state.message}/>

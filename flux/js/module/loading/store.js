@@ -21,7 +21,7 @@ var getLoading = function () {
 };
 
 store.on('show', function () {
-    store.get().stack.push()
+    store.get().stack.push();
 });
 
 store.on('hide', function () {
@@ -34,7 +34,7 @@ store.on('reset', function () {
 
 store.on('beforeAll', function () {
     getLoading();
-    console.log(arguments);
+    //console.log(arguments);
 });
 
 store.on('afterAll', function () {

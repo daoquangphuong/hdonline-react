@@ -8,6 +8,13 @@ var _ = require('underscore');
 var store = require('../store');
 
 var Loading = React.createClass({
+    getInitialState(){
+        var iconList = ['fa-spinner', 'fa-circle-o-notch', 'fa-cog', 'fa-refresh'];
+        var icon = iconList[_.random(0, iconList.length - 1)];
+        return {
+            icon: icon
+        }
+    },
     onUpdate(){
         this.forceUpdate();
     },
@@ -21,8 +28,7 @@ var Loading = React.createClass({
         store.off('update', this.onUpdate);
     },
     render(){
-        var iconList = ['fa-spinner', 'fa-circle-o-notch', 'fa-cog', 'fa-refresh'];
-        var icon = iconList[_.random(0, iconList.length - 1)];
+        var icon = this.state.icon;
         var state = store.get();
         var loadingClass = classNames({
             'loading-screen': true,
