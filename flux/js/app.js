@@ -8,7 +8,7 @@
             }
             unsafeWindow.needReload = true;
         }
-        require('./core/q_hook');
+        require('./core/q_hook')();
         require('./core/react_hook')();
         require('./core/jquery_hook')();
         var React = require('react');

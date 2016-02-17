@@ -8,6 +8,12 @@ var store = require('../store');
 var NavLink = require('react-router-active-component')('li', {link: false});
 var Link = reactRouter.Link;
 
+var MenuFake = React.createClass({
+    render(){
+        return <div className="menu-fake"></div>
+    }
+});
+
 var Menu = React.createClass({
     onUpdate(){
         this.forceUpdate();
@@ -37,7 +43,7 @@ var Menu = React.createClass({
                                             <NavLink key={key}
                                                      to={liChild.href}
                                                      activeClassName="active">
-                                                <Link to={liChild.href}>
+                                                <Link to={liChild.href} onClick={this.onUpdate}>
                                                     {liChild.name}
                                                 </Link>
                                             </NavLink>
@@ -52,7 +58,7 @@ var Menu = React.createClass({
                                  className={classNames({'has-child':li.child && li.child.length > 0})}
                                  to={li.href}
                                  activeClassName="active">
-                            <Link to={li.href}>
+                            <Link to={li.href} onClick={this.onUpdate}>
                                 {li.name}
                             </Link>
                             {child}
@@ -78,10 +84,6 @@ var Menu = React.createClass({
     }
 });
 
-Menu.Fake = React.createClass({
-    render(){
-        return <div className="menu-fake"></div>
-    }
-});
+Menu.Fake = MenuFake;
 
 module.exports = Menu;
