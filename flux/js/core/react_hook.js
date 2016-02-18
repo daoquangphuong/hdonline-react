@@ -4,7 +4,6 @@ module.exports = function () {
     var oldCreateClass = react.createClass;
     var pureRenderMixin = require('react-addons-pure-render-mixin');
     react.createClass = function (spec) {
-        console.log(spec.displayName);
         spec.mixins = spec.mixins || [];
         if (!spec.noPureRenderMixin && !spec.shouldComponentUpdate) {
             var hasShouldComponentUpdate = spec.mixins.some(function (mixin) {

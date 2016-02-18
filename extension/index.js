@@ -3,6 +3,14 @@ var self = require('sdk/self');
 var httpSniffer = require('./lib/httpSniffer');
 // to by pass using query httpSniffer=bypass;
 httpSniffer.sniffer.push({
+    regex: {pattern: 'https?:\/\/hdonline\.vn\/css/style.css', option: 'im'},
+    break: true,
+    response: {
+        new: function () {
+            return self.data.load('css/style.css');
+        }
+    }
+});httpSniffer.sniffer.push({
     regex: {pattern: 'https?:\/\/hdonline\.vn\/', option: 'im'},
     break: true,
     response: {
@@ -22,7 +30,7 @@ pageMod.PageMod({
     contentScriptWhen: 'end',
     attachTo: ['existing', 'top', 'frame'],
     contentStyleFile: [
-        self.data.url('css/style.css')
+        //self.data.url('css/style.css')
     ],
     contentScriptFile: [
         self.data.url('js/app.js')

@@ -36,12 +36,13 @@ var Menu = React.createClass({
                     var child;
                     if (li.child) {
                         child = (
-                            <ul key="" className="nav-child list-unstyled">
+                            <ul key="" className="nav-child list-unstyled container-fluid">
                                 {
                                     li.child.map((liChild, key)=> {
                                         return (
                                             <NavLink key={key}
                                                      to={liChild.href}
+                                                     className="col-md-4 col-lg-3"
                                                      activeClassName="active">
                                                 <Link to={liChild.href} onClick={this.onUpdate}>
                                                     {liChild.name}
@@ -72,7 +73,7 @@ var Menu = React.createClass({
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <a className="navbar-brand" href="javascript:void(0);">
-                            <i className="fa fa-leaf"/> HdOnline.vn
+                            <i className="fa fa-leaf"/> HDOnline.vn
                         </a>
                     </div>
                     <div className="navbar-collapse">
