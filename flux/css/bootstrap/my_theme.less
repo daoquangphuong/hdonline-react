@@ -43,9 +43,9 @@
 
 // Mixin for generating new styles
 .btn-styles(@btn-color: #555) {
-    #gradient > .vertical(@start-color: @btn-color; @end-color: darken(@btn-color, 12%));
+    //#gradient > .vertical(@start-color: @btn-color; @end-color: darken(@btn-color, 12%));
+    background: @btn-color repeat-x;
     .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootstrap/issues/10620
-    background-repeat: repeat-x;
     border-color: darken(@btn-color, 14%);
 
     &:hover,
@@ -173,7 +173,7 @@
         font-weight: bold;
     }
 
-    .navbar-brand{
+    .navbar-brand {
         color: #fff;
     }
     .navbar-brand,

@@ -43,6 +43,14 @@ var App = React.createClass({
             <div className="wrapper">
                 <Menu/>
                 <Menu.Fake/>
+                <div id="container-fluid">
+                    <button type="button" className="btn btn-default" >default</button>
+                    <button type="button" className="btn btn-primary" >primary</button>
+                    <button type="button" className="btn btn-success" >success</button>
+                    <button type="button" className="btn btn-info" >info</button>
+                    <button type="button" className="btn btn-warning" >warning</button>
+                    <button type="button" className="btn btn-danger" >danger</button>
+                </div>
                 <div id="container" className="container-fluid">
                     {this.props.children}
                 </div>
