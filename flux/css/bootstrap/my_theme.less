@@ -9,6 +9,16 @@
 @import "my_variables.less";
 @import "mixins.less";
 
+//Remove dotted outline from links, button and input element.
+a:focus, a:active,
+button::-moz-focus-inner,
+button:focus, button:active,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+    outline: 0;
+}
+
 //
 // Buttons
 // --------------------------------------------------
@@ -20,9 +30,36 @@
 .btn-info,
 .btn-warning,
 .btn-danger {
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-    @shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
-    .box-shadow(@shadow);
+    //text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+    //@shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+    //.box-shadow(@shadow);
+
+    // Reset the shadow
+    &:active,
+    &.active {
+        .box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        .box-shadow(none);
+    }
+
+    .badge {
+        text-shadow: none;
+    }
+}
+
+.btn-default-outline,
+.btn-primary-outline,
+.btn-success-outline,
+.btn-info-outline,
+.btn-warning-outline,
+.btn-danger-outline {
+    //text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+    //@shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+    //.box-shadow(@shadow);
 
     // Reset the shadow
     &:active,
@@ -46,7 +83,7 @@
     //#gradient > .vertical(@start-color: @btn-color; @end-color: darken(@btn-color, 12%));
     background: @btn-color repeat-x;
     .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootstrap/issues/10620
-    border-color: darken(@btn-color, 14%);
+    border-color: @btn-color !important;
 
     &:hover,
     &:focus {
@@ -75,6 +112,42 @@
     }
 }
 
+.btn-outline-styles(@btn-color: #555) {
+    //#gradient > .vertical(@start-color: @btn-color; @end-color: darken(@btn-color, 12%));
+    background: transparent;
+    .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootstrap/issues/10620
+    border-color: @btn-color;
+    color: @btn-color;
+    &:hover,
+    &:focus {
+        color: #fff;
+        background-color: @btn-color;
+        background-position: 0 -15px;
+    }
+
+    &:active,
+    &.active {
+        color: #fff;
+        background-color: darken(@btn-color, 12%);
+        border-color: darken(@btn-color, 14%);
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &.focus,
+        &:active,
+        &.active {
+            color: #fff;
+            background-color: darken(@btn-color, 12%);
+            background-image: none;
+        }
+    }
+}
+
 // Common styles
 .btn {
     // Remove the gradient for the pressed/active state
@@ -87,8 +160,6 @@
 // Apply the mixin to the buttons
 .btn-default {
     .btn-styles(@btn-default-bg);
-    text-shadow: 0 1px 0 #fff;
-    border-color: #ccc;
 }
 
 .btn-primary {
@@ -109,6 +180,37 @@
 
 .btn-danger {
     .btn-styles(@btn-danger-bg);
+}
+
+// Apply the mixin to the buttons
+.btn-default-outline {
+    .btn-outline-styles(@btn-default-bg);
+}
+
+.btn-primary-outline {
+    .btn-outline-styles(@btn-primary-bg);
+}
+
+.btn-success-outline {
+    .btn-outline-styles(@btn-success-bg);
+}
+
+.btn-info-outline {
+    .btn-outline-styles(@btn-info-bg);
+}
+
+.btn-warning-outline {
+    .btn-outline-styles(@btn-warning-bg);
+}
+
+.btn-danger-outline {
+    .btn-outline-styles(@btn-danger-bg);
+}
+
+.btn-pill {
+    border-radius: 1000em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
 }
 
 //
