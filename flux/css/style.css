@@ -5970,15 +5970,9 @@ button.close {
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-a:focus,
-a:active,
-button::-moz-focus-inner,
-button:focus,
-button:active,
-input[type="reset"]::-moz-focus-inner,
-input[type="button"]::-moz-focus-inner,
-input[type="submit"]::-moz-focus-inner {
-  outline: 0;
+a,
+.btn {
+  outline: none !important;
 }
 .btn-default:active,
 .btn-primary:active,

@@ -9,14 +9,9 @@
 @import "my_variables.less";
 @import "mixins.less";
 
-//Remove dotted outline from links, button and input element.
-a:focus, a:active,
-button::-moz-focus-inner,
-button:focus, button:active,
-input[type="reset"]::-moz-focus-inner,
-input[type="button"]::-moz-focus-inner,
-input[type="submit"]::-moz-focus-inner {
-    outline: 0;
+// remove outline
+a,.btn {
+    outline: none !important;
 }
 
 //
